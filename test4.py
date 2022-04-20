@@ -9,16 +9,14 @@ driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
 class DemoDropDown():
     def demo_drop(self):
-        driver.get("https://www.salesforce.com/br/form/signup/freetrial-sales-pe/")
-        dropdown = driver.find_element(By.NAME, 'CompanyEmployees')
+        driver.get("https://preview.colorlib.com/theme/bootstrap/multiselect-20/")
+        dropdown = driver.find_element(By.CLASS_NAME, 'chosen-results')
         dd = Select(dropdown)
-        dd.select_by_value('10')
         time.sleep(3)
-        driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
-        dd.select_by_index(1)
-        time.sleep(3)
-        dd.select_by_visible_text('21 - 50 funcionários')
+        dd.select_by_visible_text('Design')
         time.sleep(3)
         driver.quit()
 
 DemoDropDown().demo_drop()
+
+
