@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
-driver.get("https://www.yatra.com")
 
-driver.find_element(By.ID, 'BE_flight_flsearch_btn').click()
+class DemoDropDown():
+    def demo_drop(self):
+        driver.get("https://www.salesforce.com/br/form/signup/freetrial-sales-pe/")
+        driver.select(By.ID, 'BE_flight_flsearch_btn').click()
