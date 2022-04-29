@@ -10,12 +10,13 @@ driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 class DemoDropDown():
     def demo_drop(self):
         driver.get("https://preview.colorlib.com/theme/bootstrap/multiselect-20/")
-        driver.find_element(By.CLASS_NAME, 'chosen-choices').click()
-        dropdown = driver.find_element(By.XPATH, "//div[@id='multiple_label_example_chosen']//"
-                                                  "li[@class='active-result'][normalize-space()='HTML5']").click()
-
+        dropdown = driver.find_element(By.CLASS_NAME, 'chosen-results')
+        dd = Select(dropdown)
+        time.sleep(3)
+        dd.select_by_visible_text('Design')
         time.sleep(3)
         driver.quit()
 
-
 DemoDropDown().demo_drop()
+
+
